@@ -6,8 +6,10 @@ class Team
        @lose = lose
        @draw = draw
      end
+    def calc_win_rate
+        calc_win_rate = @win/(@win + @lose).to_f
+    end
     def show_team_result
-         calc_win_rate = @win/(@win + @lose).to_f
         puts "#{@name}の2020年の成績は#{@win}勝#{@lose}敗#{@draw}分、勝率は#{calc_win_rate}です"
     end
    end
@@ -17,7 +19,6 @@ class Team
    yokohama = Team.new("BayStars",56,58,6)
    hiroshima = Team.new("Carp", 52, 56, 12)
    yakuruto = Team.new("Swallows", 41, 69,10)
-  
    kyojin.show_team_result
    hanshin.show_team_result
    chunichi.show_team_result
